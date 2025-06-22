@@ -1,17 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Portfolio</title>
-</head>
-<body>
-  <iframe
-    style="border:1px solid rgba(0, 0, 0, 0.1);"
-    width="100%"
-    height="600"
-    src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/bWgzZmQiwwPOMlqRzGbj2Q/Untitled?node-id=0-1&t=Ywsj5tjrmU7iz7LV-1"
-    allowfullscreen
-  ></iframe>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-rXn7YJcLa3iwK5R8Mbk6xqgYIruOC4G0+m6iTiF2spAVvBKEZ4A0glF7e3IrsTfrk+RBF0lS53LUWNAWDvQdDA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <title>Prabesh Khadka - UI/UX Designer Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes fadeInUp {
+        from {opacity: 0; transform: translateY(20px);}
+        to {opacity: 1; transform: translateY(0);}
+      }
+      .fadeInUp {
+        animation: fadeInUp 1s ease-out both;
+      }
+    </style>
+    
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+   <!-- Navbar -->
+<nav class="bg-white shadow fixed top-0 w-full z-50 transition-all duration-500">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="text-xl font-bold text-purple-700 transition duration-300 transform hover:scale-105">Prabesh Khadka</div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6 text-gray-800 font-medium items-center">
+  <a href="#home" class="nav-link transition duration-300">Home</a>
+  <a href="#about" class="nav-link transition duration-300">About</a>
+  <a href="#portfolio" class="nav-link transition duration-300">Portfolio</a>
+  <a href="#skills" class="nav-link transition duration-300">Skills</a>
+  <a href="#experience" class="nav-link transition duration-300">Experience</a>
+
+  <!-- Contact button -->
+  <a href="#contact"
+     class="flex items-center gap-2 bg-purple-600 text-white px-4 py-0.5 rounded-md shadow hover:bg-purple-700 transition duration-300">
+    <span>Contact</span>
+  </a>
+</div>
+
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden">
+      <button id="menu-toggle" class="text-purple-700 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pb-4 space-y-2">
+    <a href="#about" class="block text-gray-800 hover:text-purple-600 transition duration-300">About</a>
+    <a href="#portfolio" class="block text-gray-800 hover:text-purple-600 transition duration-300">Portfolio</a>
+    <a href="#skills" class="block text-gray-800 hover:text-purple-600 transition duration-300">Skills</a>
+    <a href="#experience" class="block text-gray-800 hover:text-purple-600 transition duration-300">Experience</a>
+   <a href="#contact"class="block text-white bg-purple-600 px-4 py-2 rounded-md shadow hover:bg-yellow-500 transition duration-300">Contact</a>
+  </div>
+</nav>
+
+<!-- Script for toggle -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('animate-fade-in');
+  });
+</script>
+
+<!-- Optional animation (if not using AOS or others) -->
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+</style>
+
+    <div class="pt-20">
+     <!-- Home/Header -->
+      <section id="home" class="py-20 bg-gradient-to-r from-purple-300 via-pink-200 to-white fadeInUp">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
+          <!-- Text Content -->
+          <div class="text-center md:text-left flex-1">
+            <h1 class="text-5xl font-bold leading-tight mb-4">Hello, I'm <span class="text-purple-700">Prabesh Khadka</span></h1>
+            <h2 class="text-2xl font-semibold mb-2">UI/UX Designer based in Kathmandu, Nepal</h2>
+            <p class="text-gray-700 text-sm mb-2 text-justify">
+              I specialize in crafting intuitive and engaging user interfaces with a focus on modern web and mobile design trends. With a deep passion for creativity and a strategic mindset, I help businesses create impactful digital experiences that drive results.
+            </p>
+            <a href="#contact" class="inline-block bg-purple-600 text-white py-2 px-6 rounded-lg shadow hover:bg-red-500 transition">Hire Me</a>
+          </div>
+
+          <!-- Image Box -->
+          <div class="flex-1 text-center">
+             <div class="inline-block w-80 h-96 rounded-[25%] overflow-hidden shadow-2xl border-4 border-white transform transition duration-500 hover:scale-105 hover:shadow-purple-300">
+              <!-- Add your image here -->
+              <img src="profile.png" alt="Prabesh Khadka" class="object-cover w-full h-full" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- About -->
+     <section id="about" class="max-w-6xl mx-auto my-20 px-6 text-center fadeInUp">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <img src="profile2.jpg" alt="Prabesh Khadka" class="mx-auto w-64 h-64 rounded-[25%] object-cover shadow-xl border-4 border-white" />
+    </div>
+    <div class="text-left">
+      <h2 class="text-3xl font-bold mb-4">I am a Professional UI/UX Designer</h2>
+      <p class="text-gray-700 text-sm mb-2 text-justify">
+        With a passion for creating intuitive and visually compelling digital experiences, I focus on blending functionality with aesthetics. My designs are grounded in user research, aligning closely with brand identity and user needs.
+      </p>
+      <p class="text-gray-700 text-sm mb-2 text-justify">
+        I bring ideas to life using modern tools and design principles, ensuring each product is both effective and engaging. Let's build beautiful interfaces that truly connect with people.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4">
+  <a href="https://drive.google.com/file/d/1A9ZlAttHKItyB5eUSxdjrm0tH48tUx70/view?usp=drive_link" 
+     target="_blank"
+     class="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold shadow hover:bg-purple-700 transition duration-300">
+    Download Resume
+  </a>
+  
+  <a href="#portfolio" 
+     class="border border-purple-600 text-blue-600 px-6 py-2 rounded-lg font-semibold shadow hover:bg-purple-600 hover:text-white transition duration-300">
+    My Work
+  </a>
+</div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- Work Process -->
+     <section class="bg-white py-20 fadeInUp">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-10">My Work Process</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="bg-purple-50 p-6 rounded-2xl shadow hover:shadow-md transition">
+        <div class="text-4xl text-purple-600 mb-4">
+          🧠
+        </div>
+        <h4 class="font-semibold text-lg mb-2">1. Research</h4>
+        <p class="text-sm text-gray-600">Understanding the user and business goals to lay a strong foundation for the design.</p>
+      </div>
+      <div class="bg-purple-50 p-6 rounded-2xl shadow hover:shadow-md transition">
+        <div class="text-4xl text-purple-600 mb-4">
+          🎨
+        </div>
+        <h4 class="font-semibold text-lg mb-2">2. Design</h4>
+        <p class="text-sm text-gray-600">Creating wireframes, mockups, and high-fidelity prototypes tailored to users’ needs.</p>
+      </div>
+      <div class="bg-purple-50 p-6 rounded-2xl shadow hover:shadow-md transition">
+        <div class="text-4xl text-purple-600 mb-4">
+          🧪
+        </div>
+        <h4 class="font-semibold text-lg mb-2">3. Prototype</h4>
+        <p class="text-sm text-gray-600">Building interactive models for usability testing and user feedback.</p>
+      </div>
+      <div class="bg-purple-50 p-6 rounded-2xl shadow hover:shadow-md transition">
+        <div class="text-4xl text-purple-600 mb-4">
+          🚀
+        </div>
+        <h4 class="font-semibold text-lg mb-2">4. Launch</h4>
+        <p class="text-sm text-gray-600">Delivering polished, production-ready designs that are ready to scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- Portfolio -->
+     <section id="portfolio" class="py-16 bg-gray-100 fadeInUp">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h3 class="text-3xl font-bold mb-12">Portfolio</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div class="bg-white rounded-2xl shadow-xl hover:shadow-purple-200 transform hover:-translate-y-1 transition duration-300 text-left overflow-hidden">
+        <img src="project2.jpg" alt="Nepali Handicraft" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h4 class="font-semibold text-xl mb-1">Nepali Handicraft and Pashmina</h4>
+          <p class="text-gray-600 text-sm mb-2 text-justify">UI/UX design for a website promoting traditional handicrafts in Thamel, showcasing pashmina and handmade artistry.</p>
+          <span class="text-xs text-purple-600 font-medium">Figma</span>
+        </div>
+      </div>
+      
+      <div class="bg-white rounded-2xl shadow-xl hover:shadow-purple-200 transform hover:-translate-y-1 transition duration-300 text-left overflow-hidden">
+        <img src="project1.jpg" alt="Restaurant Menu" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h4 class="font-semibold text-xl mb-1">Restaurant Menu</h4>
+          <p class="text-gray-600 text-sm mb-2 text-justify">Minimalist UI for a restaurant menu designed with clear sections and modern food visuals to improve ordering experience.</p>
+         <span class="text-xs text-purple-600 font-medium">Figma</span>
+        </div>
+      </div>
+       <div class="bg-white rounded-2xl shadow-xl hover:shadow-purple-200 transform hover:-translate-y-1 transition duration-300 text-left overflow-hidden">
+        <img src="project3.png" alt="BDMS" class="w-full h-48 object-cover" />
+        <div class="p-5">
+          <h4 class="font-semibold text-xl mb-1">BDMS</h4>
+          <p class="text-gray-600 text-sm mb-2 text-justify">Designed a complete end-to-end UI for a Blood Donation Management System aimed at connecting donors, recipients, and hospitals.</p>
+          <span class="text-xs text-purple-600 font-medium">Figma</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- Skills -->
+      <section id="skills" class="py-16 bg-white-900 text-black">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-4xl font-bold mb-12 fade-in-up">Skills</h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <!-- Skill: HTML -->
+      <div class="bg-purple-50 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 fade-in-up">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="w-12 h-12 mx-auto mb-3">
+        <p class="text-lg font-semibold">HTML</p>
+      </div>
+
+      <!-- Skill: CSS -->
+      <div class="bg-purple-50 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 fade-in-up">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="w-12 h-12 mx-auto mb-3">
+        <p class="text-lg font-semibold">CSS</p>
+      </div>
+
+      <!-- Skill: Figma -->
+      <div class="bg-purple-50 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 fade-in-up">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" class="w-12 h-12 mx-auto mb-3">
+        <p class="text-lg font-semibold">Figma</p>
+      </div>
+
+      <!-- Skill: React -->
+      <div class="bg-purple-50 p-6 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 fade-in-up">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-12 h-12 mx-auto mb-3">
+        <p class="text-lg font-semibold">React</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Internal animation styles -->
+<style>
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+  }
+</style>
+
+<!-- Experience Section -->
+<section id="experience" class="bg-white py-16 text-gray-900">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h3 class="text-4xl font-bold mb-12 fade-in-up">Experience</h3>
+
+    <!-- Experience 1: Internship -->
+    <div class="bg-purple-50 p-6 rounded-xl mb-8 shadow-md text-left fade-in-up">
+      <h4 class="text-2xl font-semibold mb-2">Web Design Intern – iShani Technology</h4>
+      <p class="text-sm text-gray-600 mb-2">📍 Hattiban, Lalitpur | 🗓️ Duration: [Feb, 2025 – May, 2025]</p>
+      <ul class="list-disc list-inside text-base">
+        <li>Designed and built responsive UI components using HTML and Tailwind CSS.</li>
+        <li>Assisted in improving user flows and layout for client websites.</li>
+        <li>Collaborated with senior designers to follow best UX practices.</li>
+        <li>Participated in team meetings and client feedback sessions.</li>
+      </ul>
+    </div>
+
+    <!-- Experience 2: Hackathon -->
+    <div class="bg-purple-50 p-6 rounded-xl shadow-md text-left fade-in-up">
+      <h4 class="text-2xl font-semibold mb-2">Participant – AsianHack Hackathon</h4>
+      <p class="text-sm text-gray-600 mb-2">📍Asian School of Management and Technology 🗓️ [2024]</p>
+      <ul class="list-disc list-inside text-base">
+        <li>Worked in a team of 4 to design and prototype a problem-solving web application.</li>
+        <li>Created wireframes and interactive designs using Figma under tight deadlines.</li>
+        <li>Pitched the solution to judges and received valuable feedback on user-centric design.</li>
+        <li>Gained hands-on experience in collaborative design sprint environments.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+ <!-- contact -->
+    <!-- Contact -->
+<section id="contact" class="py-20 bg-gradient-to-r from-purple-50 to-purple-100 fadeInUp">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-center mb-12">Let's Discuss Your Project</h3>
+    <div class="bg-white rounded-2xl shadow-lg p-10 grid md:grid-cols-2 gap-8 items-start">
+
+      <!-- Left Side: Contact Info and Icons -->
+      <div>
+        <h4 class="text-xl font-semibold mb-4">Contact Details</h4>
+        <ul class="mb-6 space-y-4 text-sm text-gray-700">
+          <li class="flex items-center space-x-3">
+            <i class="fas fa-envelope text-purple-600 text-xl"></i>
+            <a href="mailto:prabeshkhadka7@gmail.com" class="hover:text-purple-700">prabeshkhadka7@gmail.com</a>
+          </li>
+          <li class="flex items-center space-x-3">
+            <i class="fas fa-phone text-purple-600 text-xl"></i>
+            <span>9862987571</span>
+          </li>
+        </ul>
+
+<!-- Social Links Section -->
+<h4 class="text-xl font-semibold mb-6">Social Links</h4>
+<div class="flex space-x-6">
+
+  <!-- Social Item Template -->
+  <a href="https://github.com/PrabeshKhadka7" target="_blank" 
+     class="w-12 h-12 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center bg-white">
+    <!-- Add your icon image URL below -->
+    <img 
+      src="github.png" 
+      alt="GitHub" 
+      class="w-7 h-7 object-contain" />
+  </a>
+
+  <a href="https://linkedin.com/in/prabesh-khadka-a02360215" target="_blank" 
+     class="w-12 h-12 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center bg-white">
+    <img 
+      src="linkedin.png" 
+      alt="LinkedIn" 
+      class="w-7 h-7 object-contain" />
+  </a>
+
+  <a href="https://www.facebook.com/prabesh.khadka.548815/" target="_blank" 
+     class="w-12 h-12 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 flex items-center justify-center bg-white">
+    <img 
+      src="facebook.png" 
+      alt="Facebook" 
+      class="w-7 h-7 object-contain" />
+  </a>
+
+</div>
+
+
+      </div>
+
+      <!-- Right Side: Contact Form -->
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="text" placeholder="Your Name" class="border-2 border-purple-200 focus:border-purple-500 px-4 py-3 rounded-lg w-full" required>
+          <input type="email" placeholder="Your Email" class="border-2 border-purple-200 focus:border-purple-500 px-4 py-3 rounded-lg w-full" required>
+        </div>
+        <input type="text" placeholder="Subject" class="border-2 border-purple-200 focus:border-purple-500 px-4 py-3 rounded-lg w-full" required>
+        <textarea placeholder="Message" rows="4" class="border-2 border-purple-200 focus:border-purple-500 px-4 py-3 rounded-lg w-full" required></textarea>
+        <button type="submit" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition w-full">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white text-center py-6">
+        <p>&copy; 2025 Prabesh Khadka. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
 </html>
+<style>
+  .nav-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background-color: #9333ea; /* Tailwind purple-600 */
+    transition: width 0.3s ease-in-out;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
+
